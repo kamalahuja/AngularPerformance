@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-performance';
+  pageTitle : string = 'Immutable JS demo';
 }
