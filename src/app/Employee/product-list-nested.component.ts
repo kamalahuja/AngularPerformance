@@ -14,7 +14,8 @@ export class ProductListNestedComponent{
   showImage : boolean = false;
   imageWidth : number = 50;
     imageMargin :  number = 2;
-
+    
+    
   onRatingClicked(message : string) : void {
     console.log("on rating clicked in employee");
     

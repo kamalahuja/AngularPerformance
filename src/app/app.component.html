@@ -1,7 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <h1>{{pageTitle}}</h1>
-  <pm-employee-list></pm-employee-list>
+
+      <button class="btn btn-primary" (click) = "toggleRandomProperty()">Toggle Random Input</button>
+      <button class="btn btn-primary" (click) = "toggleAnotherRandomProperty()">Toggle ANother Random Input</button>
+      
+
+  <pm-employee-list [randomProperty] = 'randomProperty'></pm-employee-list>
 </div>
 
 <router-outlet></router-outlet>

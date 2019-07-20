@@ -8,6 +8,8 @@
                 <div class = 'col-md-4'>
                     <input type="text" [(ngModel)] = 'listFilter'/> 
                 </div>
+                
+                
             </div>
             <div class="row">
 
@@ -19,5 +21,6 @@
     </div>
     <div class = 'table-responsive'>
         <product-list-nested [filteredProducts] = 'filteredProducts' [products] = 'products' (ratingClickedEvent) = 'onRatingClickedEvent($event)' ></product-list-nested>
+        
     </div>
 </div>

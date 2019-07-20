@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { IProduct } from './product';
 import {EmployeeService} from './employee.service';
 
@@ -11,7 +11,7 @@ import {EmployeeService} from './employee.service';
 export class  EmployeeListComponent implements OnInit{
     pageTitle : string = 'Product List';
     
-    
+    @Input() randomProperty : boolean = false;
     _listFilter : string;
     get listFilter() : string {
         return this._listFilter;

@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   pageTitle : string = 'Immutable JS demo';
+  randomProperty : boolean = false;
+  anotherRandomProperty : boolean = false;
+  toggleRandomProperty() : void {
+    this.randomProperty = !this.randomProperty;
+    console.log("toggleRandomProperty");
+  }
+
+  toggleAnotherRandomProperty() : void {
+    this.anotherRandomProperty = !this.anotherRandomProperty;
+    console.log("toggleAnotherRandomProperty");
+  }
 }
