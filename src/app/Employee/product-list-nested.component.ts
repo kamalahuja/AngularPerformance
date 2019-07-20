@@ -1,17 +1,25 @@
 import { IProduct } from './product';
 import { Input, Component, Output, EventEmitter } from '@angular/core';
+const fibonacci = (num: number): number => {
+    if (num === 1 || num === 2) {
+      return 1;
+    }
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  };
 
 @Component({
     selector : 'product-list-nested',
     templateUrl : './product-list-nested.component.html',
     styleUrls : ['./product-list-nested.component.css']
 })
+
+
 export class ProductListNestedComponent{
   @Input()  filteredProducts : IProduct[];
   @Input() products : IProduct[] = [];   
   @Output() ratingClickedEvent : EventEmitter<string> = new EventEmitter<string>();
   pageTitle : string = '';  
-  showImage : boolean = false;
+  showImage : boolean = true;
   imageWidth : number = 50;
     imageMargin :  number = 2;
     
@@ -26,7 +34,9 @@ export class ProductListNestedComponent{
     this.showImage = !this.showImage;
 }
 
- 
 
+  calculate(num: number) {
+    return fibonacci(num);
+  }
 
 }
