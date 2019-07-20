@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {ProductListNestedComponent} from './Employee/product-list-nested.component';
 import {EmployeeListComponent} from './Employee/employee-list.component';
 import {ConvertToSpacePipe} from './Utilities/convert-to-space.pipe';
 import {StarComponent} from './Utilities/star.component';
@@ -14,7 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     EmployeeListComponent,
     ConvertToSpacePipe,
-    StarComponent
+    StarComponent,
+    ProductListNestedComponent
   ],
   imports: [
     BrowserModule,

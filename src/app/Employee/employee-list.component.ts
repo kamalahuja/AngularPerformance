@@ -10,9 +10,8 @@ import {EmployeeService} from './employee.service';
 
 export class  EmployeeListComponent implements OnInit{
     pageTitle : string = 'Product List';
-    imageWidth : number = 50;
-    imageMargin :  number = 2;
-    showImage : boolean = false;
+    
+    
     _listFilter : string;
     get listFilter() : string {
         return this._listFilter;
@@ -27,9 +26,7 @@ export class  EmployeeListComponent implements OnInit{
 
     products : IProduct[] = [];
     errorMessage : string = '';
-    toggleImage() : void {
-        this.showImage = !this.showImage;
-    }
+    
     
     constructor(private employeeService : EmployeeService) {
         
@@ -51,8 +48,9 @@ export class  EmployeeListComponent implements OnInit{
         filterBy = filterBy.toLocaleLowerCase();
         return this.products.filter((product : IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
-    onRatingClicked(message : string) : void {
-        console.log("on rating clicked in employee");
+
+    onRatingClickedEvent  (message : string) : void {
         this.pageTitle = 'Product List : ' + message;
-    }
+    } 
+    
 }
