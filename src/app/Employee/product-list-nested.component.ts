@@ -1,6 +1,7 @@
 import { IProduct } from './product';
 import { Input, Component, Output, EventEmitter } from '@angular/core';
 const fibonacci = (num: number): number => {
+    console.log("fibonacci called n times");
     if (num === 1 || num === 2) {
       return 1;
     }
