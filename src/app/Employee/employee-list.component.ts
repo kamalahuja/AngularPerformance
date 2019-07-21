@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { IProduct } from './product';
 import {EmployeeService} from './employee.service';
-
+import {List} from 'immutable';
 @Component ({
     selector: 'pm-employee-list',
     templateUrl: './employee-list.component.html',
@@ -21,10 +21,10 @@ export class  EmployeeListComponent implements OnInit{
         this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
     }
 
-    filteredProducts : IProduct[];
+    filteredProducts : List<IProduct>;
 
 
-    products : IProduct[] = [];
+    products : List<IProduct> = List([]);
     errorMessage : string = '';
     
     
@@ -34,8 +34,10 @@ export class  EmployeeListComponent implements OnInit{
     ngOnInit(): void {
         console.log("oniinti");
         this.employeeService.getProducts().subscribe(productsParam => {
-            this.products = productsParam
-            this.filteredProducts = this.products;
+            this.products = List(productsParam);
+            this.filteredProducts = List(this.products);
+            console.log(this.products);
+            console.log(this.filteredProducts);
         }, 
             error => this.errorMessage = <any> error);
         //this.products = this.employeeService.getProducts();
@@ -44,9 +46,9 @@ export class  EmployeeListComponent implements OnInit{
        // this.listFilter = 'cart';
     }
 
-    performFilter(filterBy : string) : IProduct[] {
+    performFilter(filterBy : string) : List<IProduct> {
         filterBy = filterBy.toLocaleLowerCase();
-        return this.products.filter((product : IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+        return List(this.products.filter((product : IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1));
     }
 
     onRatingClickedEvent  (message : string) : void {
