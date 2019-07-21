@@ -1,5 +1,8 @@
 import { IProduct } from './product';
 import { Input, Component, Output, EventEmitter } from '@angular/core';
+
+import {List} from 'immutable';
+
 const fibonacci = (num: number): number => {
     console.log("fibonacci called n times");
     if (num === 1 || num === 2) {
@@ -16,8 +19,8 @@ const fibonacci = (num: number): number => {
 
 
 export class ProductListNestedComponent{
-  @Input()  filteredProducts : IProduct[];
-  @Input() products : IProduct[] = [];   
+  @Input()  filteredProducts : List<IProduct>;
+  @Input() products : List<IProduct> = List([]);   
   @Output() ratingClickedEvent : EventEmitter<string> = new EventEmitter<string>();
   pageTitle : string = '';  
   showImage : boolean = true;
