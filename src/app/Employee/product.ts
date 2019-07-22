@@ -1,3 +1,4 @@
+import {IDeeplyNested} from './DeeplyNested';
 export interface IProduct {
     productId : number;
     productName : string;
@@ -7,4 +8,6 @@ export interface IProduct {
     description : string;
     starRating : number;
     imageURL : string;
+    DeeplyNested : IDeeplyNested;
+    DeeplyNestedAgain : IDeeplyNested;
 }

@@ -32,10 +32,43 @@ export class ProductListNestedComponent{
  }
 
  toggleImage() : void {
-    this.showImage = !this.showImage;
+    //this.showImage = !this.showImage;
+    console.log(this.products);
+    let newProduct : IProduct = {
+      imageURL : "../../../assets/images/image_1.png",
+      description : "jhsdfjvbkjfdn",
+      price : 2332,
+      productCode : "GHN",
+      starRating : 4,
+      productName : "hsdbjvbfddfs",
+      productId : 5,
+      releaseDate : '09/09/2019',
+      DeeplyNested : { 
+          MoreDeeplyNested : {
+            TEsdt : 'dfd',
+            TEwst : 'dfvdddddd',
+            Test1 : 'rfererfre',
+            Test2 : 'dfvdd'
+          }
+      },
+      DeeplyNestedAgain : { 
+        MoreDeeplyNested : {
+          TEsdt : 'dfd',
+          TEwst : 'dfvdddddd',
+          Test1 : 'rfererfre',
+          Test2 : 'dfvdd'
+        }
+    }
+    };
+    
+    this.products.push(newProduct);
+    this.filteredProducts.push(newProduct);
+
 }
 
-
+addProduct() : void {
+  
+}
   calculate(num: number) {
     return fibonacci(num);
   }
