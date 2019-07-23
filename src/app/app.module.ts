@@ -8,6 +8,7 @@ import {ProductListNestedComponent} from './Employee/product-list-nested.compone
 import {EmployeeListComponent} from './Employee/employee-list.component';
 import {ConvertToSpacePipe} from './Utilities/convert-to-space.pipe';
 import {StarComponent} from './Utilities/star.component';
+import {BusinessFunctionPipe} from './Utilities/business-function-pipe';
 import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
     EmployeeListComponent,
     ConvertToSpacePipe,
     StarComponent,
-    ProductListNestedComponent
+    ProductListNestedComponent,
+    BusinessFunctionPipe
   ],
   imports: [
     BrowserModule,
