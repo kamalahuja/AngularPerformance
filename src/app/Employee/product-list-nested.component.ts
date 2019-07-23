@@ -1,5 +1,5 @@
 import { IProduct } from './product';
-import { Input, Component, Output, EventEmitter } from '@angular/core';
+import { Input, Component, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import {List} from 'immutable';
 
@@ -14,7 +14,8 @@ const fibonacci = (num: number): number => {
 @Component({
     selector : 'product-list-nested',
     templateUrl : './product-list-nested.component.html',
-    styleUrls : ['./product-list-nested.component.css']
+    styleUrls : ['./product-list-nested.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 
