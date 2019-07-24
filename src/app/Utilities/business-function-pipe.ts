@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
 const fibonacci = (num: number): number => {
-    console.log("fibonacci called n times->" +num);
+    
     if (num === 1 || num === 2) {
       return 1;
     }
@@ -12,6 +12,7 @@ const fibonacci = (num: number): number => {
 })
 export class BusinessFunctionPipe implements PipeTransform{
     transform(value : number) : number {
+      console.log("fibonacci called n times->" +value);
         return fibonacci(value);
     }
  

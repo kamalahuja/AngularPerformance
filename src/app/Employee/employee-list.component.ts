@@ -52,5 +52,34 @@ export class  EmployeeListComponent implements OnInit{
     onRatingClickedEvent  (message : string) : void {
         this.pageTitle = 'Product List : ' + message;
     } 
+
+    addproduct() : void {
+        let product : IProduct = {
+            productId : 8,
+            productName : "Hero Honda Bike",
+            productCode : "HHND",
+            releaseDate : "23/2/2019",
+            price : 23.2,
+            description : "Hero Honda Bike",
+            starRating : 4.3,
+            imageURL : "../../../assets/images/image_1.png",
+            DeeplyNested : {
+                MoreDeeplyNested : {
+                    TEsdt : "1",
+                    TEwst : "3",
+                    Test1 : "5",
+                    Test2 : "3"
+                }
+            },
+            DeeplyNestedAgain : {MoreDeeplyNested : {
+                TEsdt : "1",
+                TEwst : "3",
+                Test1 : "5",
+                Test2 : "3"
+            }}
+        };
+        this.products.push(product);
+        this.filteredProducts.push(product);
+    }
     
 }
