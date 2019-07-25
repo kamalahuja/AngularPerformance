@@ -2,6 +2,15 @@ import {Component, OnInit, Input} from '@angular/core';
 import { IProduct } from './product';
 import {EmployeeService} from './employee.service';
 import {List} from 'immutable';
+
+const fibonacciTest = (num: number): number => {
+    console.log("fibonacci called n times");
+    if (num === 1 || num === 2) {
+      return 1;
+    }
+    return fibonacciTest(num - 1) + fibonacciTest(num - 2);
+  };
+
 @Component ({
     selector: 'pm-employee-list',
     templateUrl: './employee-list.component.html',
@@ -10,7 +19,7 @@ import {List} from 'immutable';
 
 export class  EmployeeListComponent implements OnInit{
     pageTitle : string = 'Product List';
-    
+
     @Input() randomProperty : boolean = false;
     _listFilter : string;
     get listFilter() : string {
@@ -23,7 +32,7 @@ export class  EmployeeListComponent implements OnInit{
 
     filteredProducts : List<IProduct>;
 
-
+    rowData  = [];
     products : List<IProduct> = List([]);
     errorMessage : string = '';
     
@@ -33,17 +42,11 @@ export class  EmployeeListComponent implements OnInit{
     }
     ngOnInit(): void {
         console.log("oniinti");
-        this.employeeService.getProducts().subscribe(productsParam => {
-            this.products = List(productsParam);
-            this.filteredProducts = List(this.products);
-            console.log(this.products);
-            console.log(this.filteredProducts);
-        }, 
-            error => this.errorMessage = <any> error);
-        //this.products = this.employeeService.getProducts();
-        
-    
-       // this.listFilter = 'cart';
+        let myRowArray = [];
+       
+       
+
+     
     }
 
     performFilter(filterBy : string) : List<IProduct> {
@@ -83,5 +86,7 @@ export class  EmployeeListComponent implements OnInit{
        this.products = this.products.push(product);
 
     }
-    
+    calculate(num: number) {
+        return fibonacciTest(num);
+      }
 }

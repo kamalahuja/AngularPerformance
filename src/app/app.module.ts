@@ -9,6 +9,7 @@ import {EmployeeListComponent} from './Employee/employee-list.component';
 import {ConvertToSpacePipe} from './Utilities/convert-to-space.pipe';
 import {StarComponent} from './Utilities/star.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AgGridModule } from 'ag-grid-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]

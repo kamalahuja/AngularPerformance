@@ -1,6 +1,13 @@
 
-        
-        <table class = 'table' *ngIf = 'products && products.size'>
+     <ag-grid-angular 
+     style="width: 500px; height: 500px;" 
+     class="ag-theme-balham"
+     [rowData]="rowData" 
+     [columnDefs]="columnDefs"
+     [gridOptions] = 'gridOptions'
+     >
+ </ag-grid-angular>   
+     <!--   <table class = 'table' *ngIf = 'products && products.size'>
             
                 <thead>
                         <tr>
@@ -29,6 +36,6 @@
 
                         </tr>
                 </tbody>
-        </table>
+        </table>-->
 
     
