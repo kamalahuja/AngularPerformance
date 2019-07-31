@@ -11,6 +11,7 @@ import { catchError, tap } from "rxjs/operators";
 )
 export class EmployeeService {
 private productURL = 'http://localhost:3000/products';
+private productIdSequnce : number = 1;
 constructor(private http : HttpClient) {
 
 }
@@ -28,6 +29,10 @@ constructor(private http : HttpClient) {
         }
         console.log(errorMessage);
         return throwError(errorMessage);
+    }
+    getProductSequence() : number {
+        this.productIdSequnce = this.productIdSequnce + 1;
+        return this.productIdSequnce;
     }
 
 }

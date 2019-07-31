@@ -1,5 +1,6 @@
 import { IProduct } from './product';
 import { Input, Component, Output, EventEmitter } from '@angular/core';
+import { EmployeeService } from './employee.service';
 const fibonacci = (num: number): number => {
     console.log("fibonacci called n times");
     if (num === 1 || num === 2) {
@@ -24,7 +25,9 @@ export class ProductListNestedComponent{
   imageWidth : number = 50;
     imageMargin :  number = 2;
     
-    
+    constructor(private employeeService : EmployeeService) {
+        
+    }
   onRatingClicked(message : string) : void {
     console.log("on rating clicked in employee");
     
@@ -35,6 +38,7 @@ export class ProductListNestedComponent{
     //this.showImage = !this.showImage;
     console.log(this.products);
     let newProduct : IProduct = {
+      Id : this.employeeService.getProductSequence(),
       imageURL : "../../../assets/images/image_1.png",
       description : "jhsdfjvbkjfdn",
       price : 2332,
@@ -72,5 +76,9 @@ addProduct() : void {
   calculate(num: number) {
     return fibonacci(num);
   }
+  trackByItems(index: number, item: IProduct): number
+   {
+      console.log("inside track by" + item.Id) ;
+    return item.Id; }
 
 }

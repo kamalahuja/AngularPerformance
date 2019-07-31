@@ -33,8 +33,13 @@ export class  EmployeeListComponent implements OnInit{
     }
     ngOnInit(): void {
         console.log("oniinti");
+        let me = this;
         this.employeeService.getProducts().subscribe(productsParam => {
             this.products = productsParam
+            
+            this.products.forEach(function(productElement){
+                productElement.Id = me.employeeService.getProductSequence();
+            });
             this.filteredProducts = this.products;
         }, 
             error => this.errorMessage = <any> error);

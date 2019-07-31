@@ -1,5 +1,6 @@
 import {IDeeplyNested} from './DeeplyNested';
 export interface IProduct {
+    Id : number;
     productId : number;
     productName : string;
     productCode : string;
