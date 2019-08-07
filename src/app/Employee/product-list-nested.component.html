@@ -1,6 +1,6 @@
 
         
-        <table class = 'table' *ngIf = 'products && products.size'>
+        <table class = 'table' *ngIf = 'products | convertToImmutable'>
             
                 <thead>
                         <tr>
@@ -15,8 +15,9 @@
                                 <th>Star Ranking</th>
                             </tr>
                 </thead>
+                
                 <tbody>
-                        <tr *ngFor = 'let product of filteredProducts'>
+                        <tr *ngFor = 'let product of filteredProducts | convertToImmutable'>
                             <td>
                                 <img *ngIf = "showImage" [src] = 'product.imageURL' [title] = 'product.productName' [style.width.px] = 'imageWidth' [style.margin.px] = 'imageMargin'>
                             </td>

@@ -2,6 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import { IProduct } from './product';
 import {ProductService} from './product.service';
 import {List} from 'immutable';
+import { Observable } from "rxjs";
 @Component ({
     selector: 'pm-product-list',
     templateUrl: './product-list.component.html',
@@ -22,7 +23,7 @@ export class  ProductListComponent implements OnInit{
     }
 
     filteredProducts : List<IProduct>;
-
+    productObservable : Observable< IProduct[]>;
 
     products : List<IProduct> = List([]);
     errorMessage : string = '';
@@ -33,13 +34,14 @@ export class  ProductListComponent implements OnInit{
     }
     ngOnInit(): void {
         console.log("oniinti");
-        this.productService.getProducts().subscribe(productsParam => {
+        this.productObservable =  this.productService.getProducts();
+     /*   this.productService.getProducts().subscribe(productsParam => {
             this.products = List(productsParam);
             this.filteredProducts = List(this.products);
             console.log(this.products);
             console.log(this.filteredProducts);
         }, 
-            error => this.errorMessage = <any> error);
+            error => this.errorMessage = <any> error);*/
         //this.products = this.employeeService.getProducts();
         
     

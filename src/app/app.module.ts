@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {ProductListNestedComponent} from './Employee/product-list-nested.component';
 import {ProductListComponent} from './Employee/product-list.component';
 import {ConvertToSpacePipe} from './Utilities/convert-to-space.pipe';
+import {ConvertToImmutableList} from './Utilities/convert-to-immutable';
 import {StarComponent} from './Utilities/star.component';
 import {HttpClientModule} from '@angular/common/http';
 @NgModule({
@@ -14,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     ProductListComponent,
     ConvertToSpacePipe,
+    ConvertToImmutableList,
     StarComponent,
     ProductListNestedComponent
   ],

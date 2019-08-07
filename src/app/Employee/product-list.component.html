@@ -21,7 +21,7 @@
     </div>
     <div class = 'table-responsive'>
             <button class="btn btn-primary" (click) = "addproduct()">Add Random Product</button>
-        <product-list-nested [filteredProducts] = 'filteredProducts' [products] = 'products' (ratingClickedEvent) = 'onRatingClickedEvent($event)' ></product-list-nested>
+        <product-list-nested [filteredProducts] = 'productObservable | async' [products] = 'productObservable | async' (ratingClickedEvent) = 'onRatingClickedEvent($event)' ></product-list-nested>
         
     </div>
 </div>
