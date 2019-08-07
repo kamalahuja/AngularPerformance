@@ -9,7 +9,7 @@ import { catchError, tap } from "rxjs/operators";
         providedIn : "root"
     }
 )
-export class EmployeeService {
+export class ProductService {
 private productURL = 'http://localhost:3000/products';
 constructor(private http : HttpClient) {
 

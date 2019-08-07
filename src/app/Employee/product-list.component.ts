@@ -1,14 +1,14 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { IProduct } from './product';
-import {EmployeeService} from './employee.service';
+import {ProductService} from './product.service';
 
 @Component ({
-    selector: 'pm-employee-list',
-    templateUrl: './employee-list.component.html',
-    styleUrls : ['./employee-list.component.css']
+    selector: 'pm-product-list',
+    templateUrl: './product-list.component.html',
+    styleUrls : ['./product-list.component.css']
 })
 
-export class  EmployeeListComponent implements OnInit{
+export class  ProductListComponent implements OnInit{
     pageTitle : string = 'Product List';
     
     @Input() randomProperty : boolean = false;
@@ -28,20 +28,16 @@ export class  EmployeeListComponent implements OnInit{
     errorMessage : string = '';
     
     
-    constructor(private employeeService : EmployeeService) {
+    constructor(private productService : ProductService) {
         
     }
     ngOnInit(): void {
         console.log("oniinti");
-        this.employeeService.getProducts().subscribe(productsParam => {
+        this.productService.getProducts().subscribe(productsParam => {
             this.products = productsParam
             this.filteredProducts = this.products;
         }, 
             error => this.errorMessage = <any> error);
-        //this.products = this.employeeService.getProducts();
-        
-    
-       // this.listFilter = 'cart';
     }
 
     performFilter(filterBy : string) : IProduct[] {
