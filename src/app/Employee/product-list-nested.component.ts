@@ -4,7 +4,7 @@ import { Input, Component, Output, EventEmitter, ChangeDetectionStrategy } from 
 import {List} from 'immutable';
 
 const fibonacci = (num: number): number => {
-    console.log("fibonacci called n times");
+    //console.log("fibonacci called n times");
     if (num === 1 || num === 2) {
       return 1;
     }

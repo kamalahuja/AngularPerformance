@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pageTitle : string = 'Immutable JS demo';
+  pageTitle : string = 'Angular demo';
   randomProperty : boolean = false;
   anotherRandomProperty : boolean = false;
   toggleRandomProperty() : void {
